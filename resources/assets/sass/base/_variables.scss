@@ -1,0 +1,50 @@
+/**
+ * Fonts
+ * ----------------------------------------------------------------------------
+ * I'm a simple guy with simple needs, I don't like to mix a lot of different
+ * fonts in my designs.  To keep it simple, I have two different font types:
+ * copy and headlines.  They are exactly what they sound like.
+ *
+ * Make sure you also define "fallbacks" on the off chance Google fonts goes
+ * down or your user is on a crappy connection.
+ *
+ */
+$font-copy:      "Roboto", "Helvetica Neue", sans-serif;
+$font-headlines: $font-copy;
+
+// If you have the ability to use variables, damnit, use them.  The concept of
+// "bold" and "light" can mean different things to different fonts, by defining
+// variables it's easier to change later on
+$font-weight-bold:        700;
+$font-weight-normal:      400;
+
+$letter-spacing: 0;
+
+$color-gray:           #505050;
+$color-white:          #fff;
+$color-black:          #000;
+$color-green:          #95c11f;
+$color-gray-blue:      #374b55;
+$color-light-gray:     #b4b4b4;
+$color-dark-gray-blue: #233237;
+
+$breakpoints: (
+   'tiny': 320px,
+   'small-tiny': 480px,
+   'small': 640px,
+   'medium-small': 768px,
+   'medium': 980px,
+   'large': 1024px,
+   'xlarge': 1160px,
+   'xxlarge': 1280px
+);
+
+$susy: (
+   columns:         16,
+   gutters:         .25,
+   box-sizing:      border-box,
+   gutter-position: none
+);
+
+// We're just passing the configuration into Susy here
+@include layout($susy);

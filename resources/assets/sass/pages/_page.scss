@@ -1,0 +1,21 @@
+.container {
+   @include container(center);
+   max-width: 320px;
+   min-width: 300px;
+}
+
+footer {
+   @include font-size(10px);
+   color: $color-white;
+   padding: 10px 0 20px 0;
+   text-align: center;
+
+   a {
+      color: $color-white;
+      text-decoration: none;
+   }
+   .breaker {
+      padding: 0 5px;
+      text-align: center;
+   }
+}

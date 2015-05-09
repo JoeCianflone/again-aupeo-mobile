@@ -1,0 +1,13 @@
+.DS_Store
+.env
+composer.json
+*.sublime-*
+.sass-cache
+/vendor
+/node_modules
+resources/assets/bower/
+public/assets/js/
+public/assets/css/
+public/assets/fonts/
+public/assets/images/
+resources/assets/js/templates.tpl

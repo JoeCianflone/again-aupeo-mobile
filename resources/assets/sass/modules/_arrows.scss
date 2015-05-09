@@ -1,0 +1,21 @@
+.arrow {
+   &--point-up {
+      @include font-size(36px);
+      display: block;
+      line-height: 0;
+      position: relative;
+      text-align: center;
+      width: 100%;
+      position: absolute;
+
+   }
+   &--point-down {
+      @include font-size(36px);
+      display: block;
+      line-height: 0;
+      position: relative;
+      text-align: center;
+      width: 100%;
+      position: absolute;
+   }
+}

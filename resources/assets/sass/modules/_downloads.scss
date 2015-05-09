@@ -1,0 +1,23 @@
+.downloads {
+   background: transparent url("/assets/images/bg-download-phone.png") bottom right no-repeat;
+   background-size: 50%;
+   min-height: 313px;
+
+   &__header {
+      @include font-size(22px);
+      text-align: center;
+      font-weight: 400;
+      margin-top: 33px;
+   }
+   &__badges {
+      list-style-type: none;
+      padding: 0;
+      margin: 96px 0 0 10px;
+      width: 142px;
+
+      &--ios {
+         margin-bottom: 9px;
+      }
+      &--android { }
+   }
+}
