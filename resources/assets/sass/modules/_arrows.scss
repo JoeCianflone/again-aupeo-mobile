@@ -1,21 +1,26 @@
 .arrow {
    &--point-up {
-      @include font-size(36px);
+      @include font-size(45px);
+      bottom: 7px;
+      color: $color-white;
       display: block;
       line-height: 0;
       position: relative;
       text-align: center;
       width: 100%;
       position: absolute;
-
+      z-index: setZIndex(1);
    }
    &--point-down {
-      @include font-size(36px);
+      @include font-size(45px);
+      bottom: -4px;
+      color: $color-white;
       display: block;
       line-height: 0;
       position: relative;
       text-align: center;
       width: 100%;
       position: absolute;
+      z-index: setZIndex(2);
    }
 }

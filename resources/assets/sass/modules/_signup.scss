@@ -1,5 +1,41 @@
 .signup {
    background: transparent url("/assets/images/bg-signup.png") 0 0 no-repeat;
-   min-height: 560px;
    background-size: cover;
+   min-height: 560px;
+   position: relative;
+
+   &__header {
+      @include font-size(22px);
+      padding: 33px 0 14px 0;
+      text-align: center;
+   }
+   &__subheader {
+      @include font-size(16px);
+      padding: 0 0 11px 0;
+      text-align: center;
+   }
+
+   &__list {
+      @include font-size(20px);
+      color: $color-green;
+      margin: 0;
+      padding: 0 0 8px 30px;
+
+      &--item {
+         @include font-size(15px);
+         color: $color-white;
+         display: block;
+         padding: 0 0 8px 0;
+      }
+   }
+   &__form {
+      background: $color-gray-blue;
+      margin: 0 auto;
+      width: 93%;
+
+      &--wrapper {
+         padding: 13px;
+      }
+   }
+
 }

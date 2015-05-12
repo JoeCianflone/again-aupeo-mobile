@@ -18,8 +18,9 @@ $font-headlines: $font-copy;
 $font-weight-bold:        700;
 $font-weight-normal:      400;
 
-$letter-spacing: 0;
+$letter-spacing: 0.01em;
 
+$color-red:            #e14848;
 $color-gray:           #505050;
 $color-white:          #fff;
 $color-black:          #000;
@@ -48,3 +49,5 @@ $susy: (
 
 // We're just passing the configuration into Susy here
 @include layout($susy);
+
+$currentZIndex: 100;

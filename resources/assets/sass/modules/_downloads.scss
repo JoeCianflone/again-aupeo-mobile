@@ -1,7 +1,8 @@
 .downloads {
    background: transparent url("/assets/images/bg-download-phone.png") bottom right no-repeat;
-   background-size: 50%;
-   min-height: 313px;
+   background-size: 46%;
+   min-height: 292px;
+   position: relative;
 
    &__header {
       @include font-size(22px);

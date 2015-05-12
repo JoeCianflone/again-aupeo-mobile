@@ -1,21 +1,23 @@
-<h3>Access all premium features with this FREE, 30-day trial!</h3>
-<h4>Premium Features Include:</h4>
-<ul>
-   <li>No advertisements</li>
-   <li>CarMode included</li>
-   <li>Up to 50 skips per day</li>
-   <li>Higher audio sound quality</li>
+<h1 class="signup__header">Access all premium features with this <span class="text__accent">FREE</span>, 30-day trial!</h1>
+<h2 class="signup__subheader">Premium Features Include:</h2>
+<ul class="signup__list">
+   <li><span class="signup__list--item">No advertisements</span></li>
+   <li><span class="signup__list--item">CarMode included</span></li>
+   <li><span class="signup__list--item">Up to 50 skips per day</span></li>
+   <li><span class="signup__list--item">Higher audio sound quality</span></li>
 </ul>
 
-<form class="signup__premium js-signup-form" method="post" action="/signup">
-   <p>
-      <input type="text" class=".js-signup-name" name="name" value="" required>
-   </p>
-   <p>
-      <input type="email" name="email" class=".js-signup-email" value="signupEmail" required>
-   </p>
-   <p>
-      <label><input type="checkbox" class=".js-signup-optin" name="newsletter_optin" checked> Yes, sign me up for the enewsletter!</label>
-   </p>
-   <button type="submit" class="js-signup-button button">Start My Premium Trial</button>
-</form>
+{!! Form::open(['route' => 'signup-create', 'method' => 'post', 'class' => 'signup__form js-signup-form']) !!}
+   <div class="signup__form--wrapper">
+      <p>
+         {!! Form::text('name', '',['class' => 'js-signup-name required', 'placeholder' => 'Your Name']) !!}
+      </p>
+      <p>
+         {!! Form::text('email', '',['class' => 'js-signup-email required email', 'placeholder' => 'Your Email Address']) !!}
+      </p>
+      <p>
+          <label class="input__checkbox">{!! Form::checkbox('newsletter_optin', 'optin', true, ['class' => 'js-signup-optin']) !!} Yes, sign me up for the enewsletter!</label>
+      </p>
+      <button type="submit" class="js-signup-button input__button">Start My Premium Trial</button>
+   </div>
+{!! Form::close() !!}

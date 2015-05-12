@@ -1,35 +1,7 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
 
-$app->get('/', function() use ($app) {
-    return view('home', [
-       'gaCode' => "UA-XXXXX-X"
-    ]);
-});
+Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
+Route::get('/signup', ['as' => 'signup-admin', 'middleware' => 'auth.basic', 'uses' => 'SignupController@index']);
 
-$app->post('/signup', function() use($app) {
-   $validator = Validator::make(
-       [
-           'name' => 'required',
-           'email' => 'required|email|unique:signup',
-       ]
-   );
-
-   if ($validator->fails()) {
-
-   }
-
-   if ($validator->passes()) {
-
-   }
-});
+Route::post('/signup/create', ['as' => 'signup-create', 'uses' => 'SignupController@create']);
