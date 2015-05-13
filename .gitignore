@@ -1,6 +1,5 @@
 .DS_Store
 .env
-composer.json
 *.sublime-*
 .sass-cache
 /vendor
