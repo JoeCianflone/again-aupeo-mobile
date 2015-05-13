@@ -4,20 +4,29 @@
 
 php artisan down
 
-# You shouldn't be making any changes on the server to begin with
-# but if you do, we'll just clear them out of the way for you :)
 git stash
 git reset --hard
 git pull --rebase origin master
 
-php artisan migrate:install
-php artisan migrate
+composer install --no-interaction --no-dev --prefer-dist
+
+php artisan clear-compiled
+php artisan cache:clear
+php artisan config:clear
+php artisan route:clear
 
 npm install
-bower install
-
 gulp clean
 gulp compile --production
 
+php artisan migrate --force
+
+php artisan cache:clear
+php artisan config:clear
+php artisan route:clear
+
+php artisan config:cache
+php artisan route:cache
 php artisan optimize
+
 php artisan up
