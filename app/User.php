@@ -6,7 +6,7 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 
 class User extends Model implements AuthenticatableContract {
 
-	use Authenticatable
+	use Authenticatable;
 
 	/**
 	 * The database table used by the model.

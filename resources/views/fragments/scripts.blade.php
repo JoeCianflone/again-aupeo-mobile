@@ -7,5 +7,5 @@
     e=o.createElement(i);r=o.getElementsByTagName(i)[0];
     e.src='https://www.google-analytics.com/analytics.js';
     r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-    ga('create','<?=$gaCode?>','auto');ga('send','pageview');
+    ga('create','','auto');ga('send','pageview');
 </script>

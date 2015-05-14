@@ -18,6 +18,9 @@
 @section('t-description',     '')
 
 @section('content')
+   @if (Session::has('downloadSuccess'))
+      <h1 class="message--success"><br>{{Session::get('downloadSuccess')}}<br></h1>
+   @endif
    <div class="container">
       <header class="masthead">
          @include("fragments.masthead")

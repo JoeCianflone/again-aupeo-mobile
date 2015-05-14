@@ -3,7 +3,7 @@
 use JoeCianflone\Signups;
 use JoeCianflone\Http\Requests;
 use JoeCianflone\Http\Controllers\Controller;
-
+use League\Csv\Writer;
 use Illuminate\Http\Request;
 
 class SignupController extends Controller {
@@ -22,9 +22,44 @@ class SignupController extends Controller {
     */
    public function index()
    {
-      return "HELLO";
+      $csv = Writer::createFromFileObject(new \SplTempFileObject());
+      $csv->insertOne(['Name', 'Email Address', 'Send A Newsletter', 'Signup Date']);
+
+      Signups::all()->each(function($signup) use($csv) {
+         $s = $signup->toArray();
+         $s['newsletter_optin'] = $s['newsletter_optin'] ? "Yes" : "No";
+         $csv->insertOne([
+            $s["name"],
+            $s["email"],
+            $s["newsletter_optin"],
+            $s["created_at"]
+         ]);
+      });
+
+      $csv->output('signups.csv');
    }
 
+   public function latest()
+   {
+      $csv = Writer::createFromFileObject(new \SplTempFileObject());
+      $csv->insertOne(['Name', 'Email Address', 'Send A Newsletter', 'Signup Date']);
+
+      Signups::where('has_printed', 0)->get()->each(function($signup) use($csv) {
+         $s = $signup->toArray();
+         $s['newsletter_optin'] = $s['newsletter_optin'] ? "Yes" : "No";
+         $csv->insertOne([
+            $s["name"],
+            $s["email"],
+            $s["newsletter_optin"],
+            $s["created_at"]
+         ]);
+
+         $signup->has_printed = true;
+         $signup->save();
+      });
+
+      $csv->output('signups.csv');
+   }
 
    /**
     * Store a newly created resource in storage.

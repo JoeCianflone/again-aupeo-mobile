@@ -4,6 +4,7 @@
 .sass-cache
 /vendor
 /node_modules
+/database/seeds/UserTableSeeder.php
 resources/assets/bower/
 public/assets/js/
 public/assets/css/

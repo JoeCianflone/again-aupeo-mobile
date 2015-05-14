@@ -34,5 +34,4 @@ class Signups extends Model  {
       'newsletter_optin' => 'boolean',
       'has_printed' => 'boolean',
    ];
-
 }
