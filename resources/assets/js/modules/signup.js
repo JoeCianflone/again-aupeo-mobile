@@ -5,8 +5,13 @@ App.Modules.Signup = function () {
    var options = { };
 
    var validateSignup = function(data) {
+
       $('.js-signup-form').validate({
-         onsubmit: false,
+         onkeyup: false,
+         errorClass: "message--inline-error",
+         submitHandler: function (form) {
+            form.submit();
+         },
          rules: {
             name: {
                required: true
@@ -26,20 +31,14 @@ App.Modules.Signup = function () {
             }
          }
       });
-      if ($('.js-signup-form').valid()) {
-         console.log("VALID");
-      }
+
       return false;
-   };
-
-   var sendToDB = function(data) {
-
    };
 
    return {
       init: function() { return this; },
       events: function() {
-         Events.bind("click", ".js-signup-button").to(validateSignup, this);
+         Events.bind("load").to(validateSignup, this);
 
          return this;
       }

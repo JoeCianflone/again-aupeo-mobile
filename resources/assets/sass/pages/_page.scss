@@ -24,14 +24,28 @@ input {
       width: 95%;
    }
 }
-label {
-   &.error {
+
+.message {
+   &--inline-error {
       @include font-size(13px);
       color: $color-red;
       display: block;
       margin: -7px 0 14px 0;
    }
+   &--error {
+      color: $color-red;
+      display: block;
+      padding: 0 0 20px 0;
+      text-align: center;
+   }
+   &--success {
+      color: $color-green;
+      display: block;
+      padding: 0 0 20px 0;
+      text-align: center;
+   }
 }
+
 label.input__checkbox {
    @include font-size(14px);
    display: block;
