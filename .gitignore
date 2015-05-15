@@ -4,10 +4,10 @@
 .sass-cache
 /vendor
 /node_modules
-/database/seeds/UserTableSeeder.php
 resources/assets/bower/
 public/assets/js/
 public/assets/css/
 public/assets/fonts/
 public/assets/images/
 resources/assets/js/templates.tpl
+database/seeds/UserTableSeeder.php
