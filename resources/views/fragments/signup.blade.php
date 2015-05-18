@@ -13,7 +13,7 @@
          <h2 class="message--error">{{ Session::get('createError') }}</h2>
       @endif
       @if (Session::has('success'))
-         <img class="message__success--visual" src="/assets/images/icon-sports.svg" alt="">
+         <img class="message__success--visual" src="/assets/images/icon-thanks.svg" alt="Thank You!">
          <h2 class="message__success--header">Thanks!</h2>
          <h3 class="message__success--subheader">A voucher code will be sent to your email.</h3>
       @else
