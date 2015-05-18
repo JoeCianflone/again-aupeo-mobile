@@ -7,6 +7,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="description" content="@yield('description')">
 
+      <link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" />
+
       <!-- Google+ because that one guy in your company is gonna ask about it -->
       <meta itemprop="name" content="@yield('gplus-name')">
       <meta itemprop="description" content="@yield('gplus-description')">
