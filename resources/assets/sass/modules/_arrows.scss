@@ -10,6 +10,10 @@
       width: 100%;
       position: absolute;
       z-index: setZIndex(1);
+      @include media(">tiny") {
+         @include font-size(45px * $multiple2x);
+         bottom: 7px * $multiple2x;
+      }
    }
    &--point-down {
       @include font-size(45px);
@@ -22,5 +26,9 @@
       width: 100%;
       position: absolute;
       z-index: setZIndex(2);
+      @include media(">tiny") {
+         @include font-size(45px * $multiple2x);
+         bottom: -4px * $multiple2x;
+      }
    }
 }

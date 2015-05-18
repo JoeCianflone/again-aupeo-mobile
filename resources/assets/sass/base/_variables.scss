@@ -30,7 +30,7 @@ $color-light-gray:     #b4b4b4;
 $color-dark-gray-blue: #233237;
 
 $breakpoints: (
-   'tiny': 320px,
+   'tiny': 355px,
    'small-tiny': 480px,
    'small': 640px,
    'medium-small': 768px,
@@ -51,3 +51,5 @@ $susy: (
 @include layout($susy);
 
 $currentZIndex: 100;
+
+$multiple2x: 1.25;

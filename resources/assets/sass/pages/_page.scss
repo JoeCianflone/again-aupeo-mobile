@@ -1,87 +1,21 @@
 .container {
    @include container(center);
-   max-width: 320px;
+   max-width: 480px;
    min-width: 300px;
-   @include media(">tiny") {
+   @include media(">small-tiny") {
       border: 2px solid darken($color-dark-gray-blue, 2%);
    }
 }
-
-.text__accent {
-   color: $color-green;
-}
-
-form p {
-   margin: 0;
-}
-input {
-   &[type=text],
-   &[type=email] {
-      @include font-size(16px);
-      color: $color-gray;
-      margin: 0 0 12px 0;
-      padding: 7px 5px;
-      width: 95%;
-   }
-}
-
-.message {
-   &--inline-error {
-      @include font-size(13px);
-      color: $color-red;
-      display: block;
-      margin: -7px 0 14px 0;
-   }
-   &--error {
-      color: $color-red;
-      display: block;
-      padding: 0 0 20px 0;
-      text-align: center;
-   }
-   &--success {
-      color: $color-green;
-      display: block;
-      padding: 0 0 20px 0;
-      text-align: center;
-   }
-}
-
-label.input__checkbox {
-   @include font-size(14px);
-   display: block;
-   padding-left: 20px;
-   text-indent: -20px;
-   input[type=checkbox] {
-      width: 20px;
-      height: 16px;
-      font-size: x-large;
-      padding: 0;
-      margin:0;
-      vertical-align: bottom;
-      position: relative;
-      top: 1px;
-   }
-}
-
-.input__button {
-   @include font-size(18px);
-   border: none;
-   border-radius: 4px;
-   background: $color-black;
-   width: 100%;
-   padding: 17px 10px;
-   margin: 17px 0 0 0;
-   text-transform: uppercase;
-
-}
-
 
 footer {
    @include font-size(10px);
    color: $color-white;
    padding: 10px 0 20px 0;
    text-align: center;
-
+   @include media(">tiny") {
+      @include font-size(10px * $multiple2x);
+      padding: 10px * $multiple2x 0 20px * $multiple2x 0;
+   }
    a {
       color: $color-white;
       text-decoration: none;
@@ -89,5 +23,8 @@ footer {
    .breaker {
       padding: 0 5px;
       text-align: center;
+      @include media(">tiny") {
+         padding: 0 5px * $multiple2x;
+      }
    }
 }

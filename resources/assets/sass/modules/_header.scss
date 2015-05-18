@@ -8,6 +8,11 @@
       letter-spacing: 0.04em;
       line-height: 1.3;
       text-align: center;
+      @include media(">tiny") {
+         @include font-size(18px * $multiple2x);
+         padding: 18px * $multiple2x 27px * $multiple2x;
+         line-height: 1.3 / $multiple2x;
+      }
    }
    &__logo {
       background: transparent url("/assets/images/bg-header-rainbow.png") left bottom repeat-x;

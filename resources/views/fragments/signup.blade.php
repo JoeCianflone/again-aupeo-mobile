@@ -9,23 +9,27 @@
 
 {!! Form::open(['route' => 'signup-create', 'method' => 'post', 'class' => 'signup__form js-signup-form']) !!}
    <div class="signup__form--wrapper">
-      @if (Session::has('success'))
-         <h2 class="message--success">{{ Session::get('success') }}</h2>
-      @endif
       @if (Session::has('createError'))
          <h2 class="message--error">{{ Session::get('createError') }}</h2>
       @endif
-      <p>
-         {!! Form::text('name', '',['class' => 'js-signup-name required', 'placeholder' => 'Your Name']) !!}
-         {!! $errors->first('name', '<label class="message--inline-error">:message</label>') !!}
-      </p>
-      <p>
-         {!! Form::text('email', '',['class' => 'js-signup-email required email', 'placeholder' => 'Your Email Address']) !!}
-         {!! $errors->first('email', '<label class="message--inline-error">:message</label>') !!}
-      </p>
-      <p>
-          <label class="input__checkbox">{!! Form::checkbox('newsletter_optin', true, true, ['class' => 'js-signup-optin']) !!} Yes, sign me up for the enewsletter!</label>
-      </p>
-      <button type="submit" class="js-signup-button input__button">Start My Premium Trial</button>
+      @if (Session::has('success'))
+         <img class="message__success--visual" src="/assets/images/icon-sports.svg" alt="">
+         <h2 class="message__success--header">Thanks!</h2>
+         <h3 class="message__success--subheader">A voucher code will be sent to your email.</h3>
+      @else
+         <p>
+            {!! Form::text('name', '',['class' => 'js-signup-name required', 'placeholder' => 'Name']) !!}
+            {!! $errors->first('name', '<label class="message--inline-error">:message</label>') !!}
+         </p>
+         <p>
+            {!! Form::text('email', '',['class' => 'js-signup-email required email', 'placeholder' => 'Email']) !!}
+            {!! $errors->first('email', '<label class="message--inline-error">:message</label>') !!}
+         </p>
+         <p>
+             <label class="input__checkbox">{!! Form::checkbox('newsletter_optin', true, true, ['class' => 'js-signup-optin']) !!} Yes, sign me up for the enewsletter!</label>
+         </p>
+         <button type="submit" class="js-signup-button input__button">Start My Premium Trial</button>
+      @endif
+
    </div>
 {!! Form::close() !!}

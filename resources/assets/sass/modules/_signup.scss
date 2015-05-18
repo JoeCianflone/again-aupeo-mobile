@@ -3,16 +3,27 @@
    background-size: cover;
    min-height: 560px;
    position: relative;
+   @include media(">tiny") {
+      min-height: 560px * $multiple2x;
+   }
 
    &__header {
       @include font-size(22px);
       padding: 33px 0 14px 0;
       text-align: center;
+      @include media(">tiny") {
+         @include font-size(22px * $multiple2x);
+         padding: 33px * $multiple2x 15px 14px * $multiple2x 15px;
+      }
    }
    &__subheader {
       @include font-size(16px);
       padding: 0 0 11px 0;
       text-align: center;
+      @include media(">tiny") {
+         @include font-size(16px * $multiple2x);
+         padding: 0 0 11px * $multiple2x 0;
+      }
    }
 
    &__list {
@@ -20,12 +31,19 @@
       color: $color-green;
       margin: 0;
       padding: 0 0 8px 30px;
+      @include media(">tiny") {
+         @include font-size(20px * $multiple2x);
+         padding: 0 0 8px * $multiple2x 30px * $multiple2x;
+      }
 
       &--item {
          @include font-size(15px);
          color: $color-white;
          display: block;
          padding: 0 0 8px 0;
+         @include media(">tiny") {
+            @include font-size(15px * $multiple2x);
+         }
       }
    }
    &__form {
@@ -35,6 +53,9 @@
 
       &--wrapper {
          padding: 13px;
+         @include media(">tiny") {
+            padding: 13px * $multiple2x;
+         }
       }
    }
 

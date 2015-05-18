@@ -3,21 +3,32 @@
    background-size: 46%;
    min-height: 292px;
    position: relative;
+   @include media(">tiny") {
+      background-position: 100% 31px;
+   }
+
 
    &__header {
       @include font-size(22px);
       text-align: center;
       font-weight: 400;
       margin-top: 33px;
+      @include media(">tiny") {
+         @include font-size(22px * $multiple2x);
+      }
    }
    &__badges {
       list-style-type: none;
       padding: 0;
       margin: 96px 0 0 10px;
       width: 142px;
+      @include media(">tiny") {
+         margin: 96px / $multiple2x 0 0 10px * $multiple2x ;
+         width: 142px * $multiple2x ;
+      }
 
       &--ios {
-         margin-bottom: 9px;
+         margin-bottom: 9px * $multiple2x;
       }
       &--android { }
    }
