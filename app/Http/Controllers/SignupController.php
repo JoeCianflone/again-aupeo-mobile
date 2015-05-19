@@ -77,10 +77,10 @@ class SignupController extends Controller {
       $newSignup["newsletter_optin"] = is_null($newSignup["newsletter_optin"]) ? false : $newSignup["newsletter_optin"];
 
       if (! $this->signups->create($newSignup)) {
-         return redirect()->back()->withCreateError("There was a problem signing you up.  Please try again");
+         return redirect("/#signup")->withCreateError("There was a problem signing you up.  Please try again")->withInput();
       }
 
-      return redirect()->back()->withSuccess("Thanks for signing up");
+      return redirect("/#signup")->withSuccess("Thanks for signing up");
    }
 
 }

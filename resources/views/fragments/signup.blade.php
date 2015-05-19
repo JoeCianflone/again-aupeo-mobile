@@ -7,7 +7,7 @@
    <li><span class="signup__list--item">Higher audio sound quality</span></li>
 </ul>
 
-{!! Form::open(['route' => 'signup-create', 'method' => 'post', 'class' => 'signup__form js-signup-form']) !!}
+{!! Form::open(['route' => 'signup-create', 'method' => 'post', 'class' => 'signup__form js-signup-form', 'id' => 'signup']) !!}
    <div class="signup__form--wrapper">
       @if (Session::has('createError'))
          <h2 class="message--error">{{ Session::get('createError') }}</h2>
